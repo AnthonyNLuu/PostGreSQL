@@ -1,0 +1,54 @@
+<!doctype html>
+
+<html lang="en">
+  <head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <title>Slacker News</title>
+    <link href="<%= url('/styles.css') %>" rel="stylesheet" type="text/css" />
+  </head>
+
+  <body>
+    <div id = "header"> <!-- 2 inline divs: first is left justified, second is right.-->
+      <span id="logo">
+        <img src = "https://news.ycombinator.com/y18.gif" alt="logo"/>
+      </span>
+
+      <span class = "header_links" id = "header_title">
+        <a href = "www.slackernews.com">Slacker News</a>
+      </span>
+
+      <span class = "header_links">
+        <a href = "www.slackernews.com/new">new</a> |
+      </span>
+
+      <span class = "header_links">
+        <a href = "www.slackernews.com/comments">comments</a> |
+      </span>
+
+      <span class = "header_links">
+        <a href = "www.slackernews.com/show">show</a> |
+      </span>
+
+      <span class = "header_links">
+        <a href = "www.slackernews.com/ask">ask</a> |
+      </span>
+
+      <span class = "header_links">
+        <a href = "www.slackernews.com/jobs">jobs</a> |
+      </span>
+
+      <span class = "header_links">
+        <a href = "/articles/new">submit</a>
+      </span>
+      <span class = "header_links" id="login">
+        <a href = "www.slackernews.com/login">login</a>
+      </span>
+    </div>
+  </body>
+</html>
+
+<body>
+  <%= yield %>
+  <script src="/javascripts/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<% @articles.each_with_index do |article, number| %>
+
+  <% line = CSV.parse(article).flatten %>
+  <% title = line[0] %>
+  <% url = line[1] %>
+  <% description = line[2] %>
+  <% host = URI.parse(url).host.to_s %>
+  <% host = host.gsub("www.", "") if host.include?("www.") %>
+
+
+    <div id = "article_list">
+      <p class = "title">
+        <%= number + 1 %>.<img class = "arrow" src ="https://news.ycombinator.com/grayarrow.gif" alt="upvote arrow"/><a class = "post_title" href = <%= url %> ><%= title %></a>
+      <span class = "domain">
+        (<%= host %>)
+      </span></p>
+      <p class = "post_info">
+        786 points by <a href ="www.slackernews.com/user?id=danso">danso</a> <a href = "www.slackernews.com/item?id=12345">14 hours ago</a> | <a href = "www.slackernews.com/item?id=12345">498 comments</a>
+      </p>
+    </div>
+
+<% end %>
+    <div id = "article_list">
+    <p class = "spacing"></p>
+    <span id = "nomore">No more, too bad.</span>
+    </div>
+
+    <div id = "footer">
+      <hr>
+
+        <p></p>
+        Applications are open for YC Summer 2016
+        <p></p>
+        <span id = "bottom_links">Guidelines | FAQ | Support | API | Security | Lists | Bookmarklet | DMCA | Apply to YC | Contact </span>
+        <p></p>
+        <form id = "search" action = "www.google.com">
+          Search:
+          <input type ="search" name = "googlesearch" />
+        </form>
+    </div>
+  </body>
+</html>
